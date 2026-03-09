@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>719407d5-d576-4c31-b199-f62df0480fef</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Scalar.AspNetCore" Version="2.12.13" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FootyConnect.Application\FootyConnect.Application.csproj" />
+    <ProjectReference Include="..\FootyConnect.Infrastructure\FootyConnect.Infrastructure.csproj" />
+    <ProjectReference Include="..\FootyConnect.Persistence\FootyConnect.Persistence.csproj" />
+  </ItemGroup>
+
+</Project>

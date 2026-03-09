@@ -1,0 +1,16 @@
+<Solution>
+  <Folder Name="/Core/">
+    <Project Path="FootyConnect.Domain/FootyConnect.Domain.csproj" Id="5dad0a6e-4c41-4915-9d18-90fba719c98f" />
+	<Project Path="FootyConnect.Application/FootyConnect.Application.csproj" Id="c4c5af90-bbce-451c-b3fe-6d2b15a96802" />
+  </Folder>
+  <Folder Name="/CrossCuttingConcerns/">
+    <Project Path="FootyConnect.CrossCuttingConcerns/FootyConnect.CrossCuttingConcerns.csproj" Id="4308e9c3-5bfe-4a9d-9704-a04b4558f6cc" />
+  </Folder>
+  <Folder Name="/Infrastructure/">
+    <Project Path="FootyConnect.Infrastructure/FootyConnect.Infrastructure.csproj" Id="e278095b-cba2-4a27-96b0-2b18f5d43da5" />
+    <Project Path="FootyConnect.Persistence/FootyConnect.Persistence.csproj" Id="1b20e322-36f4-4f26-b240-6591106a1144" />
+  </Folder>
+  <Folder Name="/Presentations/">
+    <Project Path="FootyConnect.WebAPI/FootyConnect.WebAPI.csproj" />
+  </Folder>
+</Solution>
