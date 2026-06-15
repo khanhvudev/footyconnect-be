@@ -33,7 +33,7 @@ services.AddHandlers();
 services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer();
 
-services.ConfigureOptions<JwtBearerOptionsSetup>(); 
+services.ConfigureOptions<JwtBearerOptionsSetup>();
 
 var app = builder.Build();
 
@@ -45,8 +45,6 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
-app.UseAuthorization();
 
 app.UseAuthorization();
 

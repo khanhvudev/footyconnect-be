@@ -9,13 +9,13 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FootyConnect.WebAPI.Controllers;
 
+[Authorize(Roles = Roles.Admin)]
 [ApiController]
 [Route("api/football-pitches")]
 public class FootballPitchesController(Dispatcher dispatcher) : ControllerBase
 {
     private readonly Dispatcher _dispatcher = dispatcher;
-
-    [Authorize]
+    
     [HttpGet]
     public async Task<ActionResult<Result<IEnumerable<FootballPitchDto>>>> GetFootballPitches(CancellationToken cancellationToken)
     {

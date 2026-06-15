@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using System.Security.Claims;
 using System.Text;
 
 namespace FootyConnect.WebAPI.OptionsSetup;
@@ -20,7 +21,8 @@ public class JwtBearerOptionsSetup(IOptions<AppSettings> _appSettings) : IConfig
             ValidAudience = _jwtOptions.Audience,
             ValidateLifetime = true,
             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtOptions.SecretKey)),
-            ValidateIssuerSigningKey = true
+            ValidateIssuerSigningKey = true,
+            RoleClaimType = ClaimTypes.Role
         };
     }
 

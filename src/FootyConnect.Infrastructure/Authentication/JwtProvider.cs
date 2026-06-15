@@ -10,7 +10,7 @@ using System.Text;
 
 namespace FootyConnect.Infrastructure.Authentication;
 
-public class JwtProvider(IDateTimeProvider dateTimeProvider, 
+public class JwtProvider(IDateTimeProvider dateTimeProvider,
     IOptions<AppSettings> _appSettings) : IJwtProvider
 {
     private readonly IDateTimeProvider _dateTimeProvider = dateTimeProvider;
@@ -21,7 +21,8 @@ public class JwtProvider(IDateTimeProvider dateTimeProvider,
         var claims = new Claim[]
         {
             new(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
-            new(JwtRegisteredClaimNames.Email, user.Email)
+            new(JwtRegisteredClaimNames.Email, user.Email),
+            new(ClaimTypes.Role, user.UserRole.ToString())
         };
 
         var signingCredentials = new SigningCredentials(
@@ -38,6 +39,6 @@ public class JwtProvider(IDateTimeProvider dateTimeProvider,
 
         string tokenValue = new JwtSecurityTokenHandler().WriteToken(token);
 
-        return tokenValue;  
+        return tokenValue;
     }
 }
